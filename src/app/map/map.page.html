@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>¿Dónde estamos?</h1>
+  <ion-img src="https://image.maps.api.here.com/mia/1.6/mapview?app_id=3xJ1xva7Ad7VOciLEIFp&app_code=C8F-OpOoyjeG8Ke_Ed7w8A&poitxs=16&poitxc=white&poifc=red&poi=37.3807928,-6.0058011&t=0&z=15&nodot&h=370&w=600&i" class="seccion_1"></ion-img>
+
+  
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row no-padding no-margin>
+      <ion-col col-4 no-padding>
+        <button>
+          <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="map" (click)="navigateToMap()"  *ngIf="id =='maps'"><span class="span">Map</span></ion-icon>
+        </button>
+      </ion-col>
+
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="home" (click)="navigateToHome()"></ion-icon><span class="span">Home</span>
+          </button>
+        </ion-col>
+
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="information-circle" (click)="navigateToAbout()" ></ion-icon><span class="span">About Us</span>
+          </button>
+        </ion-col>
+
+      </ion-row>
+  </ion-grid>
+
+</ion-footer>

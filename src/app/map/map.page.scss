@@ -1,0 +1,27 @@
+.span{
+    @media screen and (orientation: landscape){
+     
+      
+    }
+    @media screen and (orientation: portrait){
+      display: none;
+      visibility: hidden;
+      font-size: 0px;
+      
+    }
+  
+  }
+  *{
+    font-family:  sans-serif;
+    box-align: justify;
+  }
+  .seccion_1 {
+    
+    background-size: cover;
+    position: relative;
+    left: 25%;
+    display: flex;
+    flex-flow: row;
+    width: 50%;
+    height: 60%;
+  }

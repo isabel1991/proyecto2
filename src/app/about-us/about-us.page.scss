@@ -1,0 +1,22 @@
+.span{
+    @media screen and (orientation: landscape){
+     
+      
+    }
+    @media screen and (orientation: portrait){
+      display: none;
+      visibility: hidden;
+      font-size: 0;
+     
+      
+    }
+  
+  }
+
+
+
+
+  *{
+    font-family:  sans-serif;
+    box-align: justify;
+  }

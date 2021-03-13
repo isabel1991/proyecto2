@@ -1,0 +1,102 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alumno/a</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+<br>
+<ion-item>
+  <ion-button color="primary" type="File" (click)="uploadImagePicker()">Examinar</ion-button>
+  <ion-img [src]="document.data.foto" style="height: auto; max-width: 23vh;"></ion-img>   
+</ion-item>
+<ion-item>
+  <ion-label>Nombre: </ion-label>
+  <ion-input [(ngModel)]=" document.data.nombre "></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Apellidos: </ion-label>
+  <ion-input [(ngModel)]=" document.data.apellidos "></ion-input> 
+</ion-item>
+
+<ion-item>
+  <ion-label>Asignaturas: </ion-label>
+  <ion-input [(ngModel)]="document.data.asignaturas "></ion-input> 
+</ion-item>
+
+<ion-item>
+  <ion-label><i>Curso:</i> </ion-label>
+  <ion-input [(ngModel)]=" document.data.curso"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label><i>Antigüedad:</i> </ion-label>
+  <ion-input [(ngModel)]=" document.data.antiguedad"></ion-input>
+</ion-item>
+
+
+ <ion-item>
+<ion-label>Fecha de nacimiento:</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YY" style="width: 75%" [(ngModel)]=" document.data.fechaNacimiento"></ion-datetime>
+</ion-item>
+
+<ion-list>
+  <ion-item>
+   <ion-label position="fixed"> <i>Repetidor</i>  </ion-label>
+    <ion-checkbox [(ngModel)]=" document.data.repetidor "></ion-checkbox>
+  </ion-item>
+</ion-list>
+
+<ion-item>
+  <ion-label><b>Total a pagar:</b> </ion-label>
+  <ion-input [(ngModel)]="document.data.total"> €</ion-input>
+</ion-item>
+
+ <!-- Botones de acción -->
+ <ion-button (click)="clicAlertConfirm()" *ngIf="id!='nuevo'">Borrar alumno/a</ion-button>
+ <ion-button (click)="clicBotonModificar()" *ngIf="id!='nuevo'">Modificar alumno/a</ion-button>
+ <ion-button (click)="clicBotonInsertar()" *ngIf="id=='nuevo'">Guardar</ion-button>
+ <div id="container">
+
+  <!-- Botones para social sharing -->
+  <button ion-button icon-only (click)="regularShare(i)" color="primary" clear>
+    <ion-icon class="share-icon" name="share" style="font-size: 30px; color: blue; background-color: white;"></ion-icon>
+  </button>
+  <!-- Boton1 -->
+  <button ion-button icon-only (click)="whatsappShare(i)" color="primary" clear>
+    <ion-icon class="share-icon" name="logo-whatsapp" style="font-size: 30px; color: rgb(18, 177, 52);background-color: white;"></ion-icon>
+  </button>
+  <!-- Boton2 -->
+  <button ion-button icon-only (click)="facebookShare(i)" color="primary" clear>
+    <ion-icon  class="share-icon" name="logo-facebook" style="font-size: 30px; color: blue;background-color: white;"></ion-icon>
+  </button>
+  <!-- Boton3 -->
+  <button ion-button icon-only (click)="twitterShare(i)" color="primary" clear>
+    <ion-icon class="share-icon" name="logo-twitter" style="font-size: 30px; color: rgb(57, 84, 240);background-color: white;"></ion-icon>
+  </button>
+</div>
+
+
+  <!-- Segment in a toolbar -->
+  <ion-footer>
+  <ion-toolbar>
+    <ion-segment  (ionChange)="segmentChanged($event)" >
+      <ion-segment-button value="home" color="primary" (click)="navigateToHome()" *ngIf="id =='home'" >
+        <ion-icon name="home" (click)="navigateToHome()" ></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="information-circle" color="primary" (click)="navigateToAbout()"  *ngIf="id =='about'">
+        <ion-icon name="information-circle"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="map" (click)="navigateToMap()" *ngIf="id =='map'">
+        <ion-icon name="map"style="font-size: 30px" ></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-footer>
+
+</ion-content>

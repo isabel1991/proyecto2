@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>aboutUs</ion-title>
+    
+   
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scroll="false">
+
+  <h1>¿Quiénes somos?</h1>
+  <pre>    Somos una empresa que se preocupa por facilitar un poco más la vida a las  personas.
+    Hemos creado esta aplicación para que la gestión del alumnado sea más sencilla, logrando 
+    así que el profesorado logre preocuparse por lo realmente importante: la enseñanza. 
+    Si tiene alguna duda al respecto no dude en contactar con nosotros a través de:
+    Email: classnet@class.com
+    Teléfono: 956 87 95 86
+  </pre> 
+
+</ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row no-padding no-margin>
+      <ion-col col-4 no-padding>
+        <button>
+          <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="information-circle" (click)="navigateToAbout()" *ngIf="id =='aboutUs'"><span class="span">About Us</span></ion-icon>
+        </button>
+      </ion-col>
+
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="home" (click)="navigateToHome()" ></ion-icon><span class="span">Home</span>
+          </button>
+        </ion-col>
+       
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="map" (click)="navigateToMap()" ></ion-icon><span class="span">Map</span>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-footer>

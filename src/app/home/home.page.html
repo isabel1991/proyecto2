@@ -1,20 +1,84 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    
     <ion-title>
-      Blank
+     <b>Base de datos de Alumnos/as</b> 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content padding >
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!-- <ion-item>
+    <ion-label><i>Foto: </i></ion-label>
+    <ion-input [(ngModel)]="alumnadoEditando.foto"></ion-input>
+  </ion-item> -->
+
+
+        <!-- Botones de acción -->
+        <!-- <ion-button (click)="clicBotonBorrar()">Borrar alumno/a</ion-button>
+        <ion-button (click)="clicBotonModificar()">Modificar alumno/a</ion-button> -->
+        <!-- <ion-button color="primary" (click)="navigateToAlumno()">Detalles del alumno/a</ion-button> -->
+         
+  
+  <h1><b>Lista de Alumnos/as</b></h1>
+  <ion-list>
+    <ion-item *ngFor="let documentAlumnado of arrayColeccionAlumnado" (click)="selecAlumnado(documentAlumnado)+ navigateToAlumno()">
+      <ion-grid>
+        <ion-row>
+          <h2 style="color:blue">{{documentAlumnado.data.nombre}}</h2>
+          <ion-img style="height: auto; max-width: 23vh;">{{documentAlumnado.data.foto}}</ion-img>   
+        </ion-row>
+        <ion-row>
+          <p >{{documentAlumnado.data.apellidos}}</p>
+        </ion-row>
+        <ion-row>
+          <p> <b>Asignaturas:</b> {{documentAlumnado.data.asignaturas}} </p>
+        </ion-row>
+        <ion-row>
+          <p><b>Total:</b> {{documentAlumnado.data.total}} €</p>
+        </ion-row>
+      </ion-grid>
+
+      
+    </ion-item>
+
+  </ion-list>
+
+
+   <!-- fab placed to the (vertical) al fondo and end -->
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed" padding>
+    <ion-fab-button (click)="navigateToNuevo()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+
+
 </ion-content>
+
+<ion-footer >
+  <ion-grid>
+    <ion-row no-padding no-margin>
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="home" (click)="navigateToHome()" *ngIf="id =='home'"><span class="span">Home</span></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="information-circle" (click)="navigateToAbout()" ></ion-icon><span class="span">About Us</span>
+          </button>
+        </ion-col>
+        <ion-col col-4 no-padding>
+          <button>
+            <ion-icon color="primary" style="font-size: 30px; align-content: center;" name="map" (click)="navigateToMap()" ></ion-icon><span class="span">Map</span>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+</ion-footer>
+
+
